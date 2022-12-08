@@ -10,6 +10,4 @@ def number_keys(a_dictionary):
     Return:
         the number of keys
     """
-
     return (len(a_dictionary))
-
