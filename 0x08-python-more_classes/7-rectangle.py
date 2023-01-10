@@ -6,7 +6,6 @@ public area and perimeter methods, allows printing using any given symbol,
 deletes, and has public attribute to keep track of number of instances
 """
 
-
 class Rectangle():
     """
     Defines class rectangle with private attribute width and height
@@ -17,27 +16,27 @@ class Rectangle():
         number_of_instances (int): number of instances created and not deleted
         print_symbol (any type): used to print string representation
     Functions:
-        _init_(self, width, height)
+        __init__(self, width, height)
         width(self)
         width(self, value)
         height(self)
         height(self, value)
         area(self)
         perimeter(self)
-        _str_(self)
-        _repr_(self)
-        _del_(self)
+        __str__(self)
+        __repr__(self)
+        __del__(self)
     """
     number_of_instances = 0
     print_symbol = "#"
 
-    def _init_(self, width=0, height=0):
+    def __init__(self, width=0, height=0):
         """ Initialize rectangles """
         self.width = width
         self.height = height
         type(self).number_of_instances += 1
 
-    def _del_(self):
+    def __del__(self):
         """ Deletes instance of class """
         print("Bye rectangle...")
         type(self).number_of_instances -= 1
@@ -72,22 +71,22 @@ class Rectangle():
 
     def area(self):
         """ Return width * height """
-        return self._width * self._height
+        return self.__width * self.__height
 
     def perimeter(self):
         """ Return 2*width + 2*height (or return 0 if width or height is 0)"""
-        if self._width == 0 or self._height == 0:
+        if self.__width == 0 or self.__height == 0:
             return 0
         return (2 * self.__width) + (2 * self.height)
 
-    def _str_(self):
+    def __str__(self):
         """ Prints rectangle with #'s """
-        if self._width == 0 or self._height == 0:
+        if self.__width == 0 or self.__height == 0:
             return ""
         pic = "\n".join([str(self.print_symbol) * self.__width
                          for rows in range(self.__height)])
         return pic
 
-    def _repr_(self):
+    def __repr__(self):
         """ String representation to recreate new instance """
         return "Rectangle({:d}, {:d})".format(self.width, self.height)
