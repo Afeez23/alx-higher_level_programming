@@ -27,6 +27,7 @@ class Rectangle:
         """ Initialize rectangles """
         self.width = width
         self.height = height
+
     @property
     def width(self):
         """ Getter returns width """
@@ -56,7 +57,7 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """ Return width * height """
+       """ Return width * height """
         return self.__width * self.__height
 
     def perimeter(self):
@@ -64,15 +65,18 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return 0
         return (2 * self.__width) + (2 * self.height)
+
     def __str__(self):
         """ Prints rectangle with #'s """
         if self.__width == 0 or self.__height == 0:
             return ""
         pic = "\n".join(["#" * self.__width for rows in range(self.__height)])
         return pic
+
     def __repr__(self):
         """ String representation to recreate new instance """
         return "Rectangle({:d}, {:d})".format(self.width, self.height)
+
     def __del__(self):
         """ Deletes instance of class """
         print("Bye rectangle...")
