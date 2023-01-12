@@ -33,4 +33,4 @@ class Student:
             res = {k: self.__dict__[k] for k in self.__dict__.keys() & attr}
             return res
         else:
-            return self.
+            return self.__dict__
